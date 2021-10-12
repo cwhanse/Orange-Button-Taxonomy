@@ -1632,7 +1632,7 @@
           {
             "type": "object",
             "description": "The type of address being specified",
-            "x-ob-item-type": "stdi:stringItemType",
+            "x-ob-item-type": "AddressTypeItemType",
             "x-ob-usage-tips": "",
             "x-ob-sample-value": {
               "Value": "Installation"
@@ -1891,8 +1891,8 @@
             "x-ob-item-type": "num:powerItemType",
             "x-ob-usage-tips": "",
             "x-ob-sample-value": {
-              "Unit": "Kilowatt",
-              "Value": "11.5"
+              "Unit": "kW",
+              "Value": 11.5
             },
             "x-ob-item-type-group": "OBElectricalPower"
           }
@@ -4913,12 +4913,7 @@
             "x-ob-item-type": "solar-types:uuidItemType",
             "x-ob-usage-tips": "",
             "x-ob-sample-value": {
-              "Decimals": "",
-              "EndTime": "",
-              "Precision": "",
-              "StartTime": "",
-              "Unit": "",
-              "Value": ""
+              "Value": "227c4c8b-522c-4fed-97cf-372506ae68b2"
             },
             "x-ob-item-type-group": ""
           }
@@ -5518,12 +5513,7 @@
             "x-ob-item-type": "stdi:stringItemType",
             "x-ob-usage-tips": "",
             "x-ob-sample-value": {
-              "Decimals": "",
-              "EndTime": "",
-              "Precision": "",
-              "StartTime": "",
-              "Unit": "",
-              "Value": ""
+              "Value": "Background check required."
             },
             "x-ob-item-type-group": ""
           }

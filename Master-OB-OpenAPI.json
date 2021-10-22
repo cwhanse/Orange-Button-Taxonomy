@@ -8674,6 +8674,79 @@
             }
           }
         ]
+      },
+      "ProdRacking": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Product"
+          },
+          {
+            "type": "object",
+            "description": "A mounting system for PV Modules.",
+            "properties": {
+              "RackingType": {
+                "$ref": "#/components/schemas/RackingType"
+              },
+              "SupportsColumnMounting": {
+                "$ref": "#/components/schemas/SupportsColumnMounting"
+              },
+              "SupportsRowMounting": {
+                "$ref": "#/components/schemas/SupportsRowMounting"
+              }
+            }
+          }
+        ]
+      },
+      "RackingType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "Type of racking system.",
+            "x-ob-item-type": "RackingTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Value": "Ground"
+            }
+          }
+        ]
+      },
+      "SupportsRowMounting": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementBoolean"
+          },
+          {
+            "type": "object",
+            "description": "True if racking supports row mounting. ",
+            "x-ob-item-type": "stdi:booleanItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Value": true
+            }
+          }
+        ]
+      },
+      "SupportsColumnMounting": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementBoolean"
+          },
+          {
+            "type": "object",
+            "description": "True if racking supports column mounting.",
+            "x-ob-item-type": "stdi:booleanItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Value": true
+            }
+          }
+        ]
       }
     }
   },
@@ -14055,6 +14128,39 @@
         "Other": {
           "label": "Other",
           "description": ""
+        }
+      }
+    },
+    "RackingTypeItemType": {
+      "description": "An enumerated list of racking types. ",
+      "enums": {
+        "FlatRoof": {
+          "label": "FlatRoof",
+          "description": ""
+        },
+        "PitchedRoof": {
+          "label": "PitchedRoof",
+          "description": ""
+        },
+        "Ground": {
+          "label": "Ground",
+          "description": ""
+        },
+        "Floating": {
+          "label": "Floating",
+          "description": ""
+        },
+        "Carport": {
+          "label": "Carport",
+          "description": ""
+        },
+        "Agriculture": {
+          "label": "Agriculture",
+          "description": ""
+        },
+        "BIPV": {
+          "label": "BIPV",
+          "description": "Building Integrated PV"
         }
       }
     }

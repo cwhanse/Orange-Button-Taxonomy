@@ -15,4 +15,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run validator
-        run: lint-openapi Master-OB-OpenAPI.json -c .ibm-validator-config
+        run: lint-openapi Master-OB-OpenAPI.json -c ./.github/workflows/ibm-validator-config

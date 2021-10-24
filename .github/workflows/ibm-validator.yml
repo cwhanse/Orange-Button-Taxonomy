@@ -15,4 +15,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Run validator
-        run: lint-openapi <the-two-json-files>
+        run: lint-openapi Master-OB-OpenAPI.json

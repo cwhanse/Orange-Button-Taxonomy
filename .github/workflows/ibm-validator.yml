@@ -6,11 +6,13 @@ jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
-      - name: Install and Run IBM OpenAPI Validator
+      - name: Setup
         uses: actions/setup-node@v2
         with:
           node-version: '10'
+      - name: Install IBM OpenAPI Validator
         run: npm install -g ibm-openapi-validator
-      - name: Validate
+      - name: Checkout
         uses: actions/checkout@v2
+      - name: Run validator
         run: lint-openapi <the-two-json-files>

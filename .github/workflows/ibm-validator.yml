@@ -16,15 +16,3 @@ jobs:
         uses: actions/checkout@v2
       - name: Run validator
         run: lint-openapi Master-OB-OpenAPI.json -c .ibm-validator-config -e
-
-  test_swagger_editor_validator_remote:
-    runs-on: ubuntu-latest
-    name: Swagger Editor Validator Remote
-
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Validate OpenAPI definition
-        uses: char0n/swagger-editor-validate@v1
-        with:
-          definition-file: Master-OB-OpenAPI.json

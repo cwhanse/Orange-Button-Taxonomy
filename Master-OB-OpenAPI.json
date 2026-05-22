@@ -102,6 +102,9 @@
           },
           "CompatibleProducts": {
             "$ref": "#/components/schemas/CompatibleProducts"
+          },
+          "ProdDeclarations": {
+            "$ref": "#/components/schemas/ProdDeclarations"
           }
         },
         "type": "object"
@@ -16325,6 +16328,93 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/CompatibleProduct"
+        }
+      },
+      "ProdDeclaration": {
+        "description": "A declaration is an authoritative statement describing attributes or properties of a product, for example, an Environmental Product Declaration. Declarations should not be used to communicate product qualifications, certifications or technical descriptions.",
+        "properties": {
+          "DeclarationDate": {
+            "$ref": "#/components/schemas/DeclarationDate"
+          },
+          "DeclarationEntity": {
+            "$ref": "#/components/schemas/DeclarationEntity"
+          },
+          "DeclarationID": {
+            "$ref": "#/components/schemas/DeclarationID"
+          },
+          "DeclarationName": {
+            "$ref": "#/components/schemas/DeclarationName"
+          },
+          "Description": {
+            "$ref": "#/components/schemas/Description"
+          },
+          "FileFolderURL": {
+            "$ref": "#/components/schemas/FileFolderURL"
+          }
+        },
+        "type": "object"
+      },
+      "DeclarationID": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "An identifier for a product declaration",
+            "x-ob-item-type": "IdentifierTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "DeclarationName": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "A name for a product declaration.",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "DeclarationEntity": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "type": "object",
+            "description": "The entity which makes the declaration.",
+            "properties": {}
+          }
+        ]
+      },
+      "DeclarationDate": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "The date of a declaration",
+            "x-ob-item-type": "DataTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ProdDeclarations": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/ProdDeclaration"
         }
       }
     }

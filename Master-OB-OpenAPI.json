@@ -105,6 +105,9 @@
           },
           "ProdDeclarations": {
             "$ref": "#/components/schemas/ProdDeclarations"
+          },
+          "SafetyDatasheetFileFolderURL": {
+            "$ref": "#/components/schemas/SafetyDatasheetFileFolderURL"
           }
         },
         "type": "object"
@@ -16416,6 +16419,21 @@
         "items": {
           "$ref": "#/components/schemas/ProdDeclaration"
         }
+      },
+      "SafetyDatasheetFileFolderURL": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "Safety datasheets for a product",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "A hazard mitigation analysis is typically within a Safety Datasheet (SDS) formerly known as a Material Safety Datasheet (MSDS).",
+            "x-ob-sample-value": {}
+          }
+        ]
       }
     }
   },

@@ -52,9 +52,6 @@
           "ProdType": {
             "$ref": "#/components/schemas/ProdType"
           },
-          "ProdInstructions": {
-            "$ref": "#/components/schemas/ProdInstructions"
-          },
           "ProdSpecifications": {
             "$ref": "#/components/schemas/ProdSpecifications"
           },
@@ -97,9 +94,6 @@
           "SourceCountries": {
             "$ref": "#/components/schemas/SourceCountries"
           },
-          "ProdDatasheetURL": {
-            "$ref": "#/components/schemas/ProdDatasheetURL"
-          },
           "CompatibleProducts": {
             "$ref": "#/components/schemas/CompatibleProducts"
           },
@@ -108,6 +102,12 @@
           },
           "SafetyDatasheetFileFolderURL": {
             "$ref": "#/components/schemas/SafetyDatasheetFileFolderURL"
+          },
+          "ProdManualFileFolderURL": {
+            "$ref": "#/components/schemas/ProdManualFileFolderURL"
+          },
+          "ProdDatasheetFileFolderURL": {
+            "$ref": "#/components/schemas/ProdDatasheetFileFolderURL"
           }
         },
         "type": "object"
@@ -2938,29 +2938,6 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/EnergyConsumption"
-        }
-      },
-      "ProdInstruction": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/TaxonomyElementString"
-          },
-          {
-            "type": "object",
-            "description": "A single document in a collection of the instructions for a product.",
-            "x-ob-item-type": "StringItemType",
-            "x-ob-usage-tips": "This should be used for sending all of the instructions for installing and servicing the product. Each file can be placed in one member of the array of ProdInstructions",
-            "x-ob-sample-value": {
-              "Value": "https://unirac.com/wp-content/uploads/pdf/FLASHKIT-PRO_Brochure_20180831.pdf"
-            },
-            "x-ob-item-type-group": ""
-          }
-        ]
-      },
-      "ProdInstructions": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/ProdInstruction"
         }
       },
       "SpecificationName": {
@@ -16083,22 +16060,6 @@
           }
         ]
       },
-      "ProdDatasheetURL": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/TaxonomyElementString"
-          },
-          {
-            "type": "object",
-            "description": "The datasheet for the product",
-            "x-ob-item-type": "StringItemType",
-            "x-ob-usage-tips": "This is for a URL leading to the Datasheet for a product.",
-            "x-ob-sample-value": {
-              "Value": "http://www.lg-solar.com/downloads/spec-sheet/DS_NeON2_60cells.pdf"
-            }
-          }
-        ]
-      },
       "AttestationURL": {
         "allOf": [
           {
@@ -16432,6 +16393,39 @@
             "x-ob-item-type-group": "",
             "x-ob-usage-tips": "A hazard mitigation analysis is typically within a Safety Datasheet (SDS) formerly known as a Material Safety Datasheet (MSDS).",
             "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ProdManualFileFolderURL": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "A single document in a collection of the instructions for a product.",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-usage-tips": "This should be used for sending all of the instructions for installing and servicing the product. Each file can be placed in one member of the array of ProdInstructions",
+            "x-ob-sample-value": {
+              "Value": "https://unirac.com/wp-content/uploads/pdf/FLASHKIT-PRO_Brochure_20180831.pdf"
+            },
+            "x-ob-item-type-group": ""
+          }
+        ]
+      },
+      "ProdDatasheetFileFolderURL": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "The datasheet for the product",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-usage-tips": "This is for a URL leading to the Datasheet for a product.",
+            "x-ob-sample-value": {
+              "Value": "http://www.lg-solar.com/downloads/spec-sheet/DS_NeON2_60cells.pdf"
+            }
           }
         ]
       }

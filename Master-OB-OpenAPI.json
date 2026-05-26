@@ -16332,6 +16332,7 @@
             "x-ob-usage-tips": "This should be used for sending all of the instructions for installing and servicing the product. Each file can be placed in one member of the array of ProdInstructions",
             "x-ob-sample-value": {
               "Value": "https://unirac.com/wp-content/uploads/pdf/FLASHKIT-PRO_Brochure_20180831.pdf"
+			}
           }
         ]
       },

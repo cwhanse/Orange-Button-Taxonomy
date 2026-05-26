@@ -16366,6 +16366,7 @@
             "x-ob-usage-tips": "This is for a URL leading to the Datasheet for a product.",
             "x-ob-sample-value": {
               "Value": "http://www.lg-solar.com/downloads/spec-sheet/DS_NeON2_60cells.pdf"
+			}
           }
         ]
       },

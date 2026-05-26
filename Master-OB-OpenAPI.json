@@ -16332,7 +16332,7 @@
             "x-ob-usage-tips": "This should be used for sending all of the instructions for installing and servicing the product. Each file can be placed in one member of the array of ProdInstructions",
             "x-ob-sample-value": {
               "Value": "https://unirac.com/wp-content/uploads/pdf/FLASHKIT-PRO_Brochure_20180831.pdf"
-			}
+            }
           }
         ]
       },
@@ -16366,7 +16366,7 @@
             "x-ob-usage-tips": "This is for a URL leading to the Datasheet for a product.",
             "x-ob-sample-value": {
               "Value": "http://www.lg-solar.com/downloads/spec-sheet/DS_NeON2_60cells.pdf"
-			}
+            }
           }
         ]
       },
@@ -21509,6 +21509,18 @@
         },
         "QualifyingAgency": {
           "label": "Qualifying Agency",
+          "description": ""
+        },
+        "GovernmentAgency": {
+          "label": "Government Agency",
+          "description": ""
+        },
+        "Auditor": {
+          "label": "Auditor",
+          "description": ""
+        },
+        "Other": {
+          "label": "Other",
           "description": ""
         }
       }

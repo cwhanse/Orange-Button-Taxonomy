@@ -15722,11 +15722,11 @@
           "AttestationURL": {
             "$ref": "#/components/schemas/AttestationURL"
           },
-          "CostPercentage": {
-            "$ref": "#/components/schemas/CostPercentage"
-          },
           "ManufacturerIsNotPFE": {
             "$ref": "#/components/schemas/ManufacturerIsNotPFE"
+          },
+          "CountryCostPercentage": {
+            "$ref": "#/components/schemas/CountryCostPercentage"
           }
         }
       },
@@ -16406,25 +16406,6 @@
           }
         ]
       },
-      "CostPercentage": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/TaxonomyElementNumber"
-          },
-          {
-            "type": "object",
-            "description": "The percentage of cost assigned to this product",
-            "x-ob-item-type": "DecimalPercentItemType",
-            "x-ob-item-type-group": "",
-            "x-ob-usage-tips": "",
-            "x-ob-sample-value": {
-              "Precision": "2",
-              "Unit": "decimal_percent",
-              "Value": 0.05
-            }
-          }
-        ]
-      },
       "ManufacturerIsNotPFE": {
         "allOf": [
           {
@@ -16438,6 +16419,25 @@
             "x-ob-usage-tips": "",
             "x-ob-sample-value": {
               "Value": true
+            }
+          }
+        ]
+      },
+      "CountryCostPercentage": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementNumber"
+          },
+          {
+            "type": "object",
+            "description": "The percentage of a product cost assigned to a country",
+            "x-ob-item-type": "DecimalPercentItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {
+              "Precision": "2",
+              "Unit": "decimal_percent",
+              "Value": 0.05
             }
           }
         ]

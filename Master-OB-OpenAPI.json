@@ -16452,6 +16452,73 @@
             }
           }
         ]
+      },
+      "Manufacturer": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "type": "object",
+            "description": "A Entity that is a manufacturer",
+            "properties": {
+              "ManufacturerID": {
+                "$ref": "#/components/schemas/ManufacturerID"
+              },
+              "ManufacturerName": {
+                "$ref": "#/components/schemas/ManufacturerName"
+              },
+              "ManufacturerCode": {
+                "$ref": "#/components/schemas/ManufacturerCode"
+              }
+            }
+          }
+        ]
+      },
+      "ManufacturerID": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "An identifier for a Manufacturer",
+            "x-ob-item-type": "IdentifierTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ManufacturerName": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "The name of a Manufacturer",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ManufacturerCode": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "A ManufacturerCode is a string of up to six alphanumeric, upper-case characters that is associated with a Manufacturer. ManufacturerCode should be consistent with the EntityCode portion of a product code (see ProdCode).",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
       }
     }
   },

@@ -11425,6 +11425,9 @@
           },
           "ProdType": {
             "$ref": "#/components/schemas/ProdType"
+          },
+          "Manufacturer": {
+            "$ref": "#/components/schemas/Manufacturer"
           }
         }
       },
@@ -16197,6 +16200,9 @@
           },
           "ProdType": {
             "$ref": "#/components/schemas/ProdType"
+          },
+          "Manufacturer": {
+            "$ref": "#/components/schemas/Manufacturer"
           }
         }
       },

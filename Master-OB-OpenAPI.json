@@ -16169,8 +16169,12 @@
             "properties": {
               "OMActivityType": {
                 "$ref": "#/components/schemas/OMActivityType"
+              },
+              "AlternativeIdentifiers": {
+                "$ref": "#/components/schemas/AlternativeIdentifiers"
               }
-            }
+            },
+            "x-ob-usage-tips": "OMEvent is used with LifeCycleEvent and ExternalEvent to record a history of events for a Device. OMEvent is not intended to describe general Operations and Maintenance activities. For O&M activites, use OMIssue, OMWorkOrder, OMTask and use Scope to specify the system, device(s), etc. that are involved."
           }
         ]
       },

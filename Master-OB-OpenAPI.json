@@ -108,6 +108,9 @@
           },
           "Manufacturer": {
             "$ref": "#/components/schemas/Manufacturer"
+          },
+          "HardwareBOMs": {
+            "$ref": "#/components/schemas/HardwareBOMs"
           }
         },
         "type": "object",
@@ -181,6 +184,9 @@
           },
           "AlternativeIdentifiers": {
             "$ref": "#/components/schemas/AlternativeIdentifiers"
+          },
+          "HardwareBOMID": {
+            "$ref": "#/components/schemas/HardwareBOMID"
           }
         },
         "type": "object"
@@ -6766,6 +6772,18 @@
               },
               "VoltageSystemMax": {
                 "$ref": "#/components/schemas/VoltageSystemMax"
+              },
+              "BifacialityFactor": {
+                "$ref": "#/components/schemas/BifacialityFactor"
+              },
+              "ModuleInterconnectType": {
+                "$ref": "#/components/schemas/ModuleInterconnectType"
+              },
+              "SurfaceCoating": {
+                "$ref": "#/components/schemas/SurfaceCoating"
+              },
+              "ModuleStyle": {
+                "$ref": "#/components/schemas/ModuleStyle"
               }
             }
           }
@@ -16502,6 +16520,137 @@
             "x-ob-sample-value": {}
           }
         ]
+      },
+      "BifacialityFactor": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementNumber"
+          },
+          {
+            "type": "object",
+            "description": "The ratio of irradiance absorbed by the reverse side to the irradiance absorbed on the front side of a bifacial module.",
+            "x-ob-item-type": "DecimalItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "Value between 0 and 1",
+            "x-ob-sample-value": {
+              "Value": 0.7
+            }
+          }
+        ]
+      },
+      "SurfaceCoating": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "A description of a surface coating, for example, on the front glass of a PV module.",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ModuleInterconnectType": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "The type of interconnection among cells in a PV module.",
+            "x-ob-item-type": "ModuleInterconnectTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ModuleStyle": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "The general style of a module in terms of the cells used.",
+            "x-ob-item-type": "ModuleStyleItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "HardwareBOM": {
+        "type": "object",
+        "description": "A bill of materials for the physical components of a product.",
+        "properties": {
+          "ProdCode": {
+            "$ref": "#/components/schemas/ProdCode"
+          },
+          "FileFolderURL": {
+            "$ref": "#/components/schemas/FileFolderURL"
+          },
+          "HardwareBOMID": {
+            "$ref": "#/components/schemas/HardwareBOMID"
+          },
+          "HardwareBOMVersion": {
+            "$ref": "#/components/schemas/HardwareBOMVersion"
+          },
+          "MaterialDisclosureChecklist": {
+            "$ref": "#/components/schemas/MaterialDisclosureChecklist"
+          }
+        }
+      },
+      "HardwareBOMID": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "An identifier for a hardware BOM",
+            "x-ob-item-type": "IdentifierTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "HardwareBOMVersion": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "An identifier for a variation of a hardware BOM",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "MaterialDisclosureChecklist": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Checklist"
+          },
+          {
+            "type": "object",
+            "description": "A checklist that discloses chemical components in a product's bill of materials (BOM).",
+            "properties": {}
+          }
+        ]
+      },
+      "HardwareBOMs": {
+        "type": "array",
+        "items": {
+          "$ref": "#/components/schemas/HardwareBOM"
+        }
       }
     }
   },
@@ -17891,29 +18040,21 @@
     "ModuleStyleItemType": {
       "description": "Module type in terms of its intended use, style or features. Use CellTechnologyTypeItemType to specify the cell type.",
       "enums": {
-        "BIPV": {
-          "label": "Building integrated PV",
-          "description": ""
-        },
-        "Bifacial": {
-          "label": "Bifacial PV",
-          "description": ""
-        },
-        "CPV": {
-          "label": "Concentrating PV",
-          "description": ""
-        },
-        "Ribbon": {
-          "label": "",
-          "description": ""
-        },
         "Other": {
           "label": "",
           "description": ""
         },
-        "MonoPV": {
-          "label": "Monofacial PV",
-          "description": "Flat, non-concentrating, rectangular, monofacial PV"
+        "SiliconWafer": {
+          "label": "Silicon wafer",
+          "description": ""
+        },
+        "Thinfilm": {
+          "label": "Thin film",
+          "description": ""
+        },
+        "Tandem": {
+          "label": "Tandem",
+          "description": ""
         }
       }
     },
@@ -21449,24 +21590,36 @@
     "FrameMaterialTypeItemType": {
       "description": "An enumerated list of frame material types.",
       "enums": {
-        "AnodizedAluminum": {
-          "label": "AnodizedAluminum",
+        "AluminumAnodized": {
+          "label": "Aluminum, Anodized",
           "description": ""
         },
-        "AnodizedAluminumAlloy": {
-          "label": "AnodizedAluminumAlloy",
+        "AluminumAlloyAnodized": {
+          "label": "Aluminum Alloy, Anodized",
           "description": ""
         },
         "Frameless": {
           "label": "Frameless",
           "description": "Glass frame, or Glass-Glass modules"
         },
-        "TransparentAluminum": {
-          "label": "TransparentAluminum",
+        "Plastic": {
+          "label": "Plastic",
           "description": ""
         },
-        "FlexiblePlastic": {
-          "label": "FlexiblePlastic",
+        "AluminumOther": {
+          "label": "Aluminum, Other",
+          "description": "Transparent, painted, or powder-coated"
+        },
+        "Steel": {
+          "label": "Steel",
+          "description": ""
+        },
+        "Fiberglass": {
+          "label": "Fiberglass",
+          "description": ""
+        },
+        "Other": {
+          "label": "Other",
           "description": ""
         }
       }
@@ -24613,6 +24766,43 @@
         },
         "Decommissioning": {
           "label": "Decommissioning",
+          "description": ""
+        }
+      }
+    },
+    "ModuleInterconnectTypeItemType": {
+      "description": "The method for connecting cells within a PV module.",
+      "enums": {
+        "BC": {
+          "label": "Back Contact",
+          "description": ""
+        },
+        "Ribbon": {
+          "label": "Ribbon and Busing",
+          "description": ""
+        },
+        "Wire": {
+          "label": "Wire and Busing",
+          "description": ""
+        },
+        "ZBB": {
+          "label": "Zero Busbar",
+          "description": ""
+        },
+        "Smartwire": {
+          "label": "SmartWire Contacting Technology",
+          "description": ""
+        },
+        "Foil": {
+          "label": "Pattern Foil",
+          "description": ""
+        },
+        "Shingling": {
+          "label": "Shingled cells",
+          "description": ""
+        },
+        "Other": {
+          "label": "Other",
           "description": ""
         }
       }

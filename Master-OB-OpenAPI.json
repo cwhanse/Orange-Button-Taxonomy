@@ -43,9 +43,6 @@
           "ProdName": {
             "$ref": "#/components/schemas/ProdName"
           },
-          "ProdMfr": {
-            "$ref": "#/components/schemas/ProdMfr"
-          },
           "ProdCode": {
             "$ref": "#/components/schemas/ProdCode"
           },
@@ -108,6 +105,9 @@
           },
           "ProdDatasheetFileFolderURL": {
             "$ref": "#/components/schemas/ProdDatasheetFileFolderURL"
+          },
+          "Manufacturer": {
+            "$ref": "#/components/schemas/Manufacturer"
           }
         },
         "type": "object",
@@ -4885,23 +4885,6 @@
             "x-ob-sample-value": {
               "Unit": "Cel",
               "Value": 15
-            },
-            "x-ob-item-type-group": ""
-          }
-        ]
-      },
-      "ProdMfr": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/TaxonomyElementString"
-          },
-          {
-            "type": "object",
-            "description": "Name of the product or equipment manufacturer.",
-            "x-ob-item-type": "StringItemType",
-            "x-ob-usage-tips": "",
-            "x-ob-sample-value": {
-              "Value": "Hanwha"
             },
             "x-ob-item-type-group": ""
           }
@@ -11437,14 +11420,14 @@
           "ProdID": {
             "$ref": "#/components/schemas/ProdID"
           },
-          "ProdMfr": {
-            "$ref": "#/components/schemas/ProdMfr"
-          },
           "ProdName": {
             "$ref": "#/components/schemas/ProdName"
           },
           "ProdType": {
             "$ref": "#/components/schemas/ProdType"
+          },
+          "Manufacturer": {
+            "$ref": "#/components/schemas/Manufacturer"
           }
         }
       },
@@ -16212,14 +16195,14 @@
           "ProdID": {
             "$ref": "#/components/schemas/ProdID"
           },
-          "ProdMfr": {
-            "$ref": "#/components/schemas/ProdMfr"
-          },
           "ProdName": {
             "$ref": "#/components/schemas/ProdName"
           },
           "ProdType": {
             "$ref": "#/components/schemas/ProdType"
+          },
+          "Manufacturer": {
+            "$ref": "#/components/schemas/Manufacturer"
           }
         }
       },
@@ -16450,6 +16433,73 @@
               "Unit": "decimal_percent",
               "Value": 0.05
             }
+          }
+        ]
+      },
+      "Manufacturer": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Entity"
+          },
+          {
+            "type": "object",
+            "description": "A Entity that is a manufacturer",
+            "properties": {
+              "ManufacturerID": {
+                "$ref": "#/components/schemas/ManufacturerID"
+              },
+              "ManufacturerName": {
+                "$ref": "#/components/schemas/ManufacturerName"
+              },
+              "ManufacturerCode": {
+                "$ref": "#/components/schemas/ManufacturerCode"
+              }
+            }
+          }
+        ]
+      },
+      "ManufacturerID": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "An identifier for a Manufacturer",
+            "x-ob-item-type": "IdentifierTypeItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ManufacturerName": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "The name of a Manufacturer",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
+          }
+        ]
+      },
+      "ManufacturerCode": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/TaxonomyElementString"
+          },
+          {
+            "type": "object",
+            "description": "A ManufacturerCode is a string of up to six alphanumeric, upper-case characters that is associated with a Manufacturer. ManufacturerCode should be consistent with the EntityCode portion of a product code (see ProdCode).",
+            "x-ob-item-type": "StringItemType",
+            "x-ob-item-type-group": "",
+            "x-ob-usage-tips": "",
+            "x-ob-sample-value": {}
           }
         ]
       }

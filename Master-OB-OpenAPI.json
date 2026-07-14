@@ -18041,14 +18041,14 @@
       "description": "Module type in terms of its intended use, style or features. Use CellTechnologyTypeItemType to specify the cell type.",
       "enums": {
         "Other": {
-          "label": "",
+          "label": "Other",
           "description": ""
         },
         "SiliconWafer": {
           "label": "Silicon wafer",
           "description": ""
         },
-        "Thinfilm": {
+        "ThinFilm": {
           "label": "Thin film",
           "description": ""
         },
@@ -24789,7 +24789,7 @@
           "label": "Zero Busbar",
           "description": ""
         },
-        "Smartwire": {
+        "SmartWire": {
           "label": "SmartWire Contacting Technology",
           "description": ""
         },

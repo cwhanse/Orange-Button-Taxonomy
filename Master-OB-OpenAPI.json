@@ -18048,11 +18048,7 @@
           "label": "Silicon wafer",
           "description": ""
         },
-<<<<<<< HEAD
         "ThinFilm": {
-=======
-        "Thinfilm": {
->>>>>>> 5bab72cdfb7323dcdb2780c40c818ee380746409
           "label": "Thin film",
           "description": ""
         },
@@ -24793,11 +24789,7 @@
           "label": "Zero Busbar",
           "description": ""
         },
-<<<<<<< HEAD
         "SmartWire": {
-=======
-        "Smartwire": {
->>>>>>> 5bab72cdfb7323dcdb2780c40c818ee380746409
           "label": "SmartWire Contacting Technology",
           "description": ""
         },
